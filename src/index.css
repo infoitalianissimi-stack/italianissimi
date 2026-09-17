@@ -1,0 +1,370 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --color-navy: #0f2f68;
+  --color-navy-deep: #0a1f45;
+  --color-ink: #222831;
+  --color-ink-soft: #3a4454;
+  --color-muted: #5c6573;
+  --color-line: #dce2ea;
+  --color-paper: #f6f8fb;
+  --color-paper-deep: #e8edf3;
+  --color-white: #ffffff;
+  --color-accent: #f47a1f;
+  --color-accent-hover: #d96814;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@utility section-pad {
+  padding-block: clamp(4rem, 8.5vw, 7.25rem);
+}
+
+@utility measure {
+  max-width: 38rem;
+}
+
+@utility measure-wide {
+  max-width: 42rem;
+}
+
+@utility display {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  letter-spacing: -0.042em;
+  line-height: 1.08;
+}
+
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 700ms ease;
+  pointer-events: none;
+}
+
+.hero-layer.is-active {
+  opacity: 1;
+}
+
+.hero-copy {
+  color: #fff;
+  animation: hero-copy-in 520ms ease;
+}
+
+.hero-arrow {
+  display: inline-flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  color: rgb(255 255 255 / 0.55);
+  transition:
+    color 250ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease;
+}
+
+.hero-arrow:hover,
+.hero-arrow:focus-visible {
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.45);
+  background: rgb(255 255 255 / 0.06);
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgb(8 38 89 / 0.016) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(8 38 89 / 0.016) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 65% 80% at 82% 42%, black, transparent 78%);
+}
+
+.command-stage {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, rgb(22 58 120 / 0.95), #0a1f45 72%);
+  box-shadow:
+    0 30px 70px -32px rgb(10 31 69 / 0.7),
+    inset 0 1px 0 rgb(255 255 255 / 0.08);
+}
+
+.command-orb {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.command-orb-a {
+  top: 12%;
+  right: 18%;
+  width: 140px;
+  height: 140px;
+  background: rgb(244 122 31 / 0.14);
+}
+
+.command-orb-b {
+  bottom: 10%;
+  left: 12%;
+  width: 180px;
+  height: 180px;
+  background: rgb(255 255 255 / 0.06);
+}
+
+.command-orb-c {
+  top: -40px;
+  right: 8%;
+  width: 220px;
+  height: 220px;
+  background: rgb(244 122 31 / 0.1);
+}
+
+.command-hub {
+  min-width: 10.75rem;
+  border-radius: 1.15rem;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.04));
+  box-shadow:
+    0 24px 50px -24px rgb(0 0 0 / 0.65),
+    0 0 48px -16px rgb(244 122 31 / 0.28);
+  text-align: center;
+}
+
+.need-card {
+  box-shadow: 0 14px 32px -26px rgb(15 47 104 / 0.4);
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.need-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -24px rgb(15 47 104 / 0.32);
+}
+
+.btn-primary {
+  position: relative;
+  box-shadow: 0 10px 24px -16px rgb(8 38 89 / 0.7);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--color-accent);
+}
+
+.card-lift {
+  border-radius: 3px;
+  transition:
+    transform 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease,
+    background-color 280ms ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-3px);
+  border-color: rgb(8 38 89 / 0.28);
+  box-shadow: 0 18px 34px -22px rgb(8 38 89 / 0.35);
+}
+
+.card-lift:hover .icon-nudge {
+  transform: translateY(-1px);
+  color: var(--color-accent);
+}
+
+.problem-card {
+  box-shadow: 0 12px 28px -24px rgb(15 47 104 / 0.38);
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -22px rgb(15 47 104 / 0.28);
+}
+
+.problem-card:hover .icon-nudge {
+  transform: translateY(-1px);
+  color: var(--color-accent);
+}
+
+.icon-nudge {
+  transition:
+    transform 280ms ease,
+    color 280ms ease,
+    background-color 280ms ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.eco-line {
+  stroke-dasharray: 1.1 6;
+  opacity: 0.55;
+  animation: dash-flow 32s linear infinite;
+}
+
+.eco-line-b {
+  animation-duration: 34s;
+  animation-direction: reverse;
+}
+
+.eco-line-c {
+  animation-duration: 31s;
+}
+
+.eco-line-d {
+  animation-duration: 36s;
+  animation-direction: reverse;
+}
+
+.eco-line-e {
+  animation-duration: 26s;
+}
+
+.eco-node {
+  animation: node-glow 7s ease-in-out infinite;
+}
+
+.eco-hub {
+  animation: float-y 9s ease-in-out infinite;
+}
+
+.eco-leaf-a {
+  animation: float-y 11s ease-in-out infinite;
+}
+
+.eco-leaf-b {
+  animation: float-y 12.5s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.eco-leaf-c {
+  animation: float-y 13s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.eco-leaf-d {
+  animation: float-y 10.5s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+.eco-leaf-e {
+  animation: float-y 12s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+@keyframes node-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 1023px) {
+  .eco-line,
+  .eco-node,
+  .eco-hub,
+  .eco-leaf-a,
+  .eco-leaf-b,
+  .eco-leaf-c,
+  .eco-leaf-d,
+  .eco-leaf-e {
+    animation: none;
+  }
+
+  .reveal {
+    transform: translateY(10px);
+    transition-duration: 0.4s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
