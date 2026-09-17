@@ -6,6 +6,7 @@ import { GuidedContact } from "../components/GuidedContact";
 import { PageHero } from "../components/PageHero";
 import { Section } from "../components/Section";
 import { WhatsAppAction } from "../components/WhatsAppAction";
+import { media } from "../data/media";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 export function Contatti() {
@@ -18,7 +19,12 @@ export function Contatti() {
 
   return (
     <>
-      <PageHero kicker="Contatti" title="Dimmi cosa vuoi migliorare">
+      <PageHero
+        kicker="Contatti"
+        title="Dimmi cosa vuoi migliorare"
+        image={media("contatti-hero.jpg")}
+        imageAlt="Spazio di lavoro da cui parte il contatto con Italianissimi."
+      >
         <p>Non serve sapere già quale soluzione ti serve. Indica cosa vuoi migliorare: WhatsApp o email.</p>
       </PageHero>
       <Section className="bg-paper">
@@ -33,6 +39,13 @@ export function Contatti() {
       <Section className="bg-white">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
+            <img
+              src={media("contatti-workspace.jpg")}
+              alt="Scrivania di lavoro reale, tra documenti e computer."
+              width="1200"
+              height="800"
+              className="mb-8 aspect-[16/10] w-full object-cover"
+            />
             <h2 className="display text-2xl text-navy">Recapiti</h2>
             <dl className="mt-6 space-y-5">
               <div>

@@ -3,6 +3,7 @@ import { OpenContactButton } from "../components/GuidedContact";
 import { CtaBand, PageHero } from "../components/PageHero";
 import { Section } from "../components/Section";
 import { ServiceBlock } from "../components/ServiceBlock";
+import { media } from "../data/media";
 import { services } from "../data/content";
 import { usePageMeta } from "../hooks/usePageMeta";
 
@@ -16,7 +17,12 @@ export function Servizi() {
 
   return (
     <>
-      <PageHero kicker="Servizi" title="Cosa possiamo fare per la tua attività">
+      <PageHero
+        kicker="Servizi"
+        title="Cosa possiamo fare per la tua attività"
+        image={media("servizi-hero.jpg")}
+        imageAlt="Tavolo di lavoro con computer, documenti e strumenti digitali."
+      >
         <p>
           Non devi sapere in anticipo se ti serve un sito, un CRM, un’automazione o una gestione
           social. Indica il problema. Partiamo da lì.

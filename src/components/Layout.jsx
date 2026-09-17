@@ -19,15 +19,20 @@ function RouteEffects() {
 
 export function Layout() {
   const { pathname } = useLocation();
-  const isHome = pathname === "/";
+  const photoHero =
+    pathname === "/" ||
+    pathname === "/italianissimi" ||
+    pathname === "/servizi" ||
+    pathname === "/metodo" ||
+    pathname === "/contatti";
 
   return (
     <ContactProvider>
       <RouteEffects />
       <div className="min-h-screen">
         <SkipLink />
-        <Navbar overlayHero={isHome} />
-        <main id="contenuto" className={isHome ? "" : "pt-[4.85rem]"}>
+        <Navbar overlayHero={photoHero} />
+        <main id="contenuto" className={photoHero ? "" : "pt-[4.85rem]"}>
           <Outlet />
         </main>
         <Footer />

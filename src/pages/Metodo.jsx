@@ -2,6 +2,7 @@ import { Container } from "../components/Container";
 import { MethodStep } from "../components/MethodStep";
 import { CtaBand, PageHero } from "../components/PageHero";
 import { Section } from "../components/Section";
+import { media } from "../data/media";
 import { methodSteps } from "../data/content";
 import { usePageMeta } from "../hooks/usePageMeta";
 
@@ -15,7 +16,12 @@ export function Metodo() {
 
   return (
     <>
-      <PageHero kicker="Metodo" title="Come lavoriamo">
+      <PageHero
+        kicker="Metodo"
+        title="Come lavoriamo"
+        image={media("metodo-hero.jpg")}
+        imageAlt="Lavoro di analisi e confronto, partendo dall’attività reale."
+      >
         <p>Partiamo dalla tua attività, non dal nostro catalogo servizi.</p>
       </PageHero>
       <Section className="bg-paper">

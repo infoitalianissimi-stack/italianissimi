@@ -1,3 +1,5 @@
+import { media } from "./media";
+
 /**
  * Anagrafica e recapiti.
  * Modifica qui i dati societari: si aggiornano footer, contatti e GuidedContact.
@@ -18,5 +20,5 @@ export const company = {
   rea: "BI-207631",
   privacyUrl: "/privacy",
   cookieUrl: "/cookie",
-  heroImageSrc: `${import.meta.env.BASE_URL}images/hero-italianissimi.jpg`,
+  heroImageSrc: media("hero-slide-01-lavoro-reale.jpg"),
 };

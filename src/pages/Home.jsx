@@ -149,7 +149,7 @@ export function Home() {
             <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
               {methodSteps.map((step, index) => (
                 <Reveal key={step.number} delay={index * 80}>
-                  <MethodStep step={step} />
+                  <MethodStep step={step} showImage={false} />
                 </Reveal>
               ))}
             </div>

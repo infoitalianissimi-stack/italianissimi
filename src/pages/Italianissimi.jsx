@@ -5,6 +5,7 @@ import { OpenContactButton } from "../components/GuidedContact";
 import { Prose } from "../components/Prose";
 import { Section } from "../components/Section";
 import { SectionHeading } from "../components/SectionHeading";
+import { media } from "../data/media";
 import { usePageMeta } from "../hooks/usePageMeta";
 
 export function Italianissimi() {
@@ -17,7 +18,12 @@ export function Italianissimi() {
 
   return (
     <>
-      <PageHero kicker="Italianissimi" title="Italianissimi nasce dal lavoro vero.">
+      <PageHero
+        kicker="Italianissimi"
+        title="Italianissimi nasce dal lavoro vero."
+        image={media("italianissimi-hero.jpg")}
+        imageAlt="Ambiente di lavoro reale, da cui nasce Italianissimi."
+      >
         <p>
           Non proponiamo una tecnologia perché esiste. Cerchiamo di capire se può essere utile.
         </p>
@@ -30,6 +36,13 @@ export function Italianissimi() {
             title="Dal lavoro quotidiano, non da un catalogo servizi."
           />
           <Prose className="lg:col-span-7">
+            <img
+              src={media("italianissimi-lavoro-vero.jpg")}
+              alt="Lavoro quotidiano in azienda, tra documenti, scadenze e attività reali."
+              width="1200"
+              height="800"
+              className="mb-10 aspect-[16/10] w-full object-cover"
+            />
             <p>La nostra visione non nasce da una scrivania di un’agenzia.</p>
             <p>
               Nasce dall’esperienza concreta del lavoro quotidiano, dal rapporto con aziende,

@@ -1,9 +1,11 @@
+import { media } from "./media";
+
 export const HERO_AUTOPLAY_MS = 7500;
 
 export const heroSlides = [
   {
     id: "emozione",
-    image: `${import.meta.env.BASE_URL}images/hero-italianissimi.jpg`,
+    image: media("hero-slide-01-lavoro-reale.jpg"),
     imagePosition: "object-[28%_center] sm:object-[32%_center] lg:object-[38%_center]",
     alt: "Professionista al lavoro in un ambiente reale, con computer e documenti sul tavolo.",
     kicker: "Italianissimi SRLS",
@@ -13,7 +15,7 @@ export const heroSlides = [
   },
   {
     id: "principio",
-    image: `${import.meta.env.BASE_URL}images/hero-slide-02-professionista-donna.jpg`,
+    image: media("hero-slide-02-professionista-donna.jpg"),
     imagePosition: "object-[62%_center] sm:object-[58%_center] lg:object-[55%_center]",
     alt: "Professionista al lavoro, concentrata sul digitale della propria attività.",
     kicker: "Il metodo",
@@ -23,7 +25,7 @@ export const heroSlides = [
   },
   {
     id: "insight",
-    image: `${import.meta.env.BASE_URL}images/hero-slide-03-workspace-emozionale.jpg`,
+    image: media("hero-slide-03-workspace-emozionale.jpg"),
     imagePosition: "object-center",
     alt: "Spazio di lavoro reale, tra documenti, schermo e attività quotidiana.",
     kicker: "Nel lavoro quotidiano",

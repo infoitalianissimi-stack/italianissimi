@@ -2,20 +2,50 @@ import { OpenContactButton } from "./GuidedContact";
 import { Button } from "./Button";
 import { Container } from "./Container";
 
-export function PageHero({ kicker, title, children, titleId }) {
+export function PageHero({ kicker, title, children, titleId, image, imageAlt = "" }) {
+  const photo = Boolean(image);
+
   return (
-    <header className="hero-stage relative border-b border-navy/[0.06]">
-      <Container className="max-w-4xl py-14 sm:py-20">
+    <header
+      className={
+        photo
+          ? "relative isolate overflow-hidden bg-navy-deep text-white"
+          : "hero-stage relative border-b border-navy/[0.06]"
+      }
+    >
+      {photo ? (
+        <>
+          <img
+            src={image}
+            alt={imageAlt}
+            width="1920"
+            height="1080"
+            className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/68 to-navy-deep/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/72 via-transparent to-navy-deep/28" />
+        </>
+      ) : null}
+      <Container className={`relative max-w-4xl ${photo ? "py-24 sm:py-32" : "py-14 sm:py-20"}`}>
         {kicker ? (
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
             {kicker}
           </p>
         ) : null}
-        <h1 id={titleId} className="display max-w-3xl text-4xl text-navy sm:text-5xl">
+        <h1
+          id={titleId}
+          className={`display max-w-3xl text-4xl sm:text-5xl ${photo ? "text-white" : "text-navy"}`}
+        >
           {title}
         </h1>
         {children ? (
-          <div className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">{children}</div>
+          <div
+            className={`mt-6 max-w-xl text-lg leading-relaxed ${
+              photo ? "text-white/84" : "text-ink-soft"
+            }`}
+          >
+            {children}
+          </div>
         ) : null}
       </Container>
     </header>
