@@ -11,7 +11,7 @@ import { Servizi } from "./pages/Servizi";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>

@@ -7,7 +7,7 @@ export const company = {
   brandName: "ITALIANISSIMI",
   tagline: "Partner digitale per imprese e professionisti",
   servicesLine: "Web · Comunicazione · Tecnologia · Automazioni · AI",
-  logoSrc: "/logo-italianissimi.svg",
+  logoSrc: `${import.meta.env.BASE_URL}logo-italianissimi.svg`,
   siteUrl: "https://www.italianissimi.it",
   whatsapp: "+39 329 848 0112",
   whatsappUrl: "https://wa.me/393298480112",
@@ -18,5 +18,5 @@ export const company = {
   rea: "BI-207631",
   privacyUrl: "/privacy",
   cookieUrl: "/cookie",
-  heroImageSrc: "/images/hero-italianissimi.jpg",
+  heroImageSrc: `${import.meta.env.BASE_URL}images/hero-italianissimi.jpg`,
 };
