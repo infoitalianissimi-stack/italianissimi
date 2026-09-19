@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Contatti } from "./pages/Contatti";
@@ -21,8 +21,10 @@ export default function App() {
           <Route path="/partner-digitale" element={<PartnerDigitale />} />
           <Route path="/metodo" element={<Metodo />} />
           <Route path="/contatti" element={<Contatti />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/cookie" element={<Cookie />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/cookie-policy" element={<Cookie />} />
+          <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+          <Route path="/cookie" element={<Navigate to="/cookie-policy" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>

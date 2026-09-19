@@ -1,6 +1,7 @@
 import { Container } from "../components/Container";
 import { GuidedContact } from "../components/GuidedContact";
 import { MethodStep } from "../components/MethodStep";
+import { MissionBand } from "../components/MissionBand";
 import { NeedCard } from "../components/NeedCard";
 import { CtaBand } from "../components/PageHero";
 import { PhotoHero } from "../components/PhotoHero";
@@ -19,6 +20,8 @@ export function Home() {
   return (
     <>
       <PhotoHero />
+
+      <MissionBand />
 
       <Section id="ti-aiutiamo" ariaLabelledby="help-title" className="bg-white">
         <Container>

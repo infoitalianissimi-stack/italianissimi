@@ -69,6 +69,60 @@
   animation: hero-copy-in 520ms ease;
 }
 
+.brand-block {
+  transition: opacity 280ms ease;
+}
+
+.brand-block:hover {
+  opacity: 0.78;
+}
+
+.brand-wordmark {
+  display: block;
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  font-feature-settings: "kern" 1;
+}
+
+.brand-wordmark--nav {
+  position: relative;
+  padding-bottom: 0.4rem;
+}
+
+.brand-wordmark--nav::after {
+  content: "";
+  position: absolute;
+  left: 0.04em;
+  bottom: 0;
+  width: 1.55rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+@media (min-width: 640px) {
+  .brand-wordmark {
+    font-size: 1.13rem;
+    letter-spacing: 0.072em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-wordmark {
+    font-size: 1.21rem;
+    letter-spacing: 0.078em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-block {
+    transition: none;
+  }
+}
+
 .hero-arrow {
   display: inline-flex;
   height: 2.5rem;

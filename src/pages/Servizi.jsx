@@ -20,8 +20,9 @@ export function Servizi() {
       <PageHero
         kicker="Servizi"
         title="Cosa possiamo fare per la tua attività"
-        image={media("servizi-hero.jpg")}
-        imageAlt="Tavolo di lavoro con computer, documenti e strumenti digitali."
+        image={media("servizi-organizzazione.jpg")}
+        imageAlt="Scrivania di lavoro con computer, telefono e strumenti digitali organizzati."
+        imagePosition="object-[38%_center] sm:object-[46%_center] lg:object-[52%_center]"
       >
         <p>
           Non devi sapere in anticipo se ti serve un sito, un CRM, un’automazione o una gestione
@@ -29,9 +30,9 @@ export function Servizi() {
         </p>
       </PageHero>
       <Section className="bg-paper">
-        <Container className="grid gap-8">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-16">
           {services.map((service) => (
-    <div key={service.id} id={service.id} className="grid scroll-mt-28 gap-4">
+            <div key={service.id} id={service.id} className="grid scroll-mt-28 gap-5">
               <ServiceBlock service={service} showExamples />
               <OpenContactButton className="w-fit">Inizia da qui</OpenContactButton>
             </div>

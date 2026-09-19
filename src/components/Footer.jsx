@@ -9,8 +9,11 @@ export function Footer() {
     <footer className="bg-navy-deep text-white">
       <Container className="section-pad grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <Logo />
-          <p className="mt-5 max-w-md text-white/70">{company.tagline}</p>
+          <Logo variant="emblem" inverted />
+          <p className="mt-6 max-w-md text-lg font-medium leading-snug text-white">
+            La tecnologia aiuta. Le persone fanno la differenza.
+          </p>
+          <p className="mt-4 max-w-md text-white/70">{company.tagline}</p>
           <p className="mt-6 text-sm text-white/50">{company.servicesLine}</p>
         </div>
 

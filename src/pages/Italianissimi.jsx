@@ -1,6 +1,7 @@
 import { Container } from "../components/Container";
 import { CtaBand, PageHero } from "../components/PageHero";
 import { Button } from "../components/Button";
+import { MissionBand } from "../components/MissionBand";
 import { OpenContactButton } from "../components/GuidedContact";
 import { Prose } from "../components/Prose";
 import { Section } from "../components/Section";
@@ -10,39 +11,32 @@ import { usePageMeta } from "../hooks/usePageMeta";
 
 export function Italianissimi() {
   usePageMeta({
-    title: "Italianissimi | Partner Digitale",
+    title: "Italianissimi | La tecnologia aiuta. Le persone fanno la differenza.",
     description:
-      "Italianissimi nasce dal lavoro vero: partner digitale per imprese e professionisti, partendo dal problema e non dal prodotto.",
+      "Italianissimi nasce dal lavoro vero: web, comunicazione, tecnologia, automazioni e AI al servizio di imprese e professionisti, partendo dalle persone e dai problemi reali.",
     path: "/italianissimi",
   });
 
   return (
     <>
       <PageHero
-        kicker="Italianissimi"
-        title="Italianissimi nasce dal lavoro vero."
+        title="Prima il lavoro reale. Poi la tecnologia."
         image={media("italianissimi-hero.jpg")}
         imageAlt="Ambiente di lavoro reale, da cui nasce Italianissimi."
       >
         <p>
-          Non proponiamo una tecnologia perché esiste. Cerchiamo di capire se può essere utile.
+          Non proponiamo strumenti perché esistono. Cerchiamo di capire se possono davvero essere
+          utili alla tua attività.
         </p>
       </PageHero>
       <Section className="bg-white">
         <Container className="grid gap-12 lg:grid-cols-12">
           <SectionHeading
             className="lg:col-span-5"
-            kicker="Perché nasce"
-            title="Dal lavoro quotidiano, non da un catalogo servizi."
+            kicker="Da dove partiamo"
+            title="Dal lavoro quotidiano, non da un catalogo di servizi."
           />
           <Prose className="lg:col-span-7">
-            <img
-              src={media("italianissimi-lavoro-vero.jpg")}
-              alt="Lavoro quotidiano in azienda, tra documenti, scadenze e attività reali."
-              width="1200"
-              height="800"
-              className="mb-10 aspect-[16/10] w-full object-cover"
-            />
             <p>La nostra visione non nasce da una scrivania di un’agenzia.</p>
             <p>
               Nasce dall’esperienza concreta del lavoro quotidiano, dal rapporto con aziende,
@@ -57,11 +51,12 @@ export function Italianissimi() {
           </Prose>
         </Container>
       </Section>
+      <MissionBand titleId="mission-italianissimi" />
       <Section className="bg-paper">
         <Container className="grid gap-12 lg:grid-cols-12">
           <SectionHeading
             className="lg:col-span-5"
-            kicker="Partner Digitale"
+            kicker="Come ti aiutiamo"
             title="Una persona di fiducia, non dieci fornitori."
           />
           <Prose className="lg:col-span-7">
@@ -84,13 +79,13 @@ export function Italianissimi() {
           />
           <Prose className="lg:col-span-7">
             <p>Non proponiamo una tecnologia perché esiste.</p>
-            <p>Cerchiamo di capire se può essere utile.</p>
-            <p>Non partiamo dal prodotto da vendere.</p>
-            <p>Partiamo dal problema da risolvere.</p>
+            <p>Prima vengono le persone, i problemi reali e il lavoro di ogni giorno.</p>
+            <p>Poi, solo se servono davvero, arrivano sito, comunicazione, automazioni e AI.</p>
+            <p>Partiamo dal problema da risolvere, non dal prodotto da vendere.</p>
             <div className="flex flex-wrap gap-3 pt-4">
               <OpenContactButton>Dimmi cosa vuoi migliorare</OpenContactButton>
               <Button to="/servizi" variant="secondary" arrow={false}>
-                Scopri cosa possiamo fare
+                Scopri come possiamo aiutarti
               </Button>
             </div>
           </Prose>

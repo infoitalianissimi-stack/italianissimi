@@ -4,7 +4,7 @@ export const navItems = [
   { label: "Home", to: "/" },
   { label: "Italianissimi", to: "/italianissimi" },
   { label: "Servizi", to: "/servizi" },
-  { label: "Partner Digitale", to: "/partner-digitale" },
+  { label: "Come ti aiutiamo", to: "/partner-digitale" },
   { label: "Metodo", to: "/metodo" },
   { label: "Contatti", to: "/contatti" },
 ];
@@ -19,9 +19,20 @@ export const footerItems = [
   { label: "Home", to: "/" },
   { label: "Italianissimi", to: "/italianissimi" },
   { label: "Servizi", to: "/servizi" },
+  { label: "Come ti aiutiamo", to: "/partner-digitale" },
   { label: "Metodo", to: "/metodo" },
   { label: "Contatti", to: "/contatti" },
 ];
+
+export const brandMission = {
+  eyebrow: "Il nostro modo di lavorare",
+  lineOne: "La tecnologia aiuta.",
+  lineTwo: "Le persone fanno la differenza.",
+  support:
+    "Perché, anche con tutta la tecnologia del mondo, una stretta di mano e due chiacchiere restano un ottimo punto di partenza.",
+  follow:
+    "Usiamo strumenti digitali, automazioni e AI quando servono davvero. Ma ogni progetto parte sempre dalle persone e dalle esigenze reali della loro attività.",
+};
 
 export const helpWhen = [
   { id: "sito", icon: "web", label: "migliorare o rifare il sito" },

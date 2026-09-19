@@ -23,7 +23,7 @@ export function Navbar({ overlayHero = false }) {
   }, [open]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -33,24 +33,29 @@ export function Navbar({ overlayHero = false }) {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color,box-shadow,backdrop-filter] duration-300 ${
         scrolled || open
-          ? "border-navy/[0.08] bg-white/82 shadow-[0_10px_40px_-24px_rgba(15,47,104,0.35)] backdrop-blur-xl"
-          : "border-transparent bg-transparent"
+          ? "border-navy/[0.08] bg-white/88 shadow-[0_12px_36px_-24px_rgba(15,47,104,0.4)] backdrop-blur-xl"
+          : onPhoto
+            ? "border-white/10 bg-navy-deep/28 backdrop-blur-md"
+            : "border-transparent bg-transparent"
       }`}
     >
-      <Container className="flex h-[4.35rem] items-center justify-between gap-6 lg:h-[4.85rem]">
-        <Logo compact className={onPhoto ? "rounded-md shadow-[0_10px_24px_-12px_rgba(0,0,0,0.45)]" : ""} />
+      <Container className="relative flex h-16 items-center justify-between lg:h-[4.5rem]">
+        <Logo className="relative z-10 pr-4 sm:pr-6" inverted={onPhoto} />
 
-        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Principale">
+        <nav
+          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-0.5 xl:flex"
+          aria-label="Principale"
+        >
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `rounded-md px-3.5 py-2 text-[0.9rem] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                `rounded-md px-2.5 py-2 text-[0.86rem] font-medium tracking-[-0.01em] transition-colors duration-200 ${
                   onPhoto
                     ? isActive
                       ? "text-white"
-                      : "text-white/75 hover:text-white"
+                      : "text-white/72 hover:text-white"
                     : isActive
                       ? "text-navy"
                       : "text-muted hover:text-navy"
@@ -70,18 +75,18 @@ export function Navbar({ overlayHero = false }) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="relative z-10 flex items-center gap-2">
           <OpenContactButton
             variant={onPhoto ? "light" : "primary"}
-            className="min-h-10 px-4 py-2 text-sm"
+            arrow={false}
+            className="min-h-10 whitespace-nowrap px-3 py-2 text-[0.8125rem] sm:px-4 sm:text-sm"
           >
-            <span className="hidden 2xl:inline">Dimmi cosa vuoi migliorare</span>
-            <span className="2xl:hidden">Cosa vuoi migliorare?</span>
+            Cosa vuoi migliorare?
           </OpenContactButton>
           <button
             type="button"
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-md border xl:hidden ${
-              onPhoto ? "border-white/30 text-white" : "border-navy/12 text-navy"
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors duration-200 xl:hidden ${
+              onPhoto ? "border-white/30 text-white hover:border-white/55" : "border-navy/12 text-navy hover:border-navy/30"
             }`}
             aria-expanded={open}
             aria-controls="menu-mobile"
@@ -111,8 +116,8 @@ export function Navbar({ overlayHero = false }) {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `border-b border-navy/[0.06] py-3.5 text-base font-medium ${
-                  isActive ? "text-navy" : "text-ink-soft"
+                `border-b border-navy/[0.06] py-3.5 text-base font-medium transition-colors duration-200 ${
+                  isActive ? "text-navy" : "text-ink-soft hover:text-navy"
                 }`
               }
               end={item.to === "/"}
@@ -120,7 +125,7 @@ export function Navbar({ overlayHero = false }) {
               {item.label}
             </NavLink>
           ))}
-          <OpenContactButton className="mt-5 w-full">Dimmi cosa vuoi migliorare</OpenContactButton>
+          <OpenContactButton className="mt-5 w-full">Cosa vuoi migliorare?</OpenContactButton>
         </Container>
       </div>
     </header>

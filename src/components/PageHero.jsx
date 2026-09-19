@@ -2,14 +2,22 @@ import { OpenContactButton } from "./GuidedContact";
 import { Button } from "./Button";
 import { Container } from "./Container";
 
-export function PageHero({ kicker, title, children, titleId, image, imageAlt = "" }) {
+export function PageHero({
+  kicker,
+  title,
+  children,
+  titleId,
+  image,
+  imageAlt = "",
+  imagePosition = "object-center",
+}) {
   const photo = Boolean(image);
 
   return (
     <header
       className={
         photo
-          ? "relative isolate overflow-hidden bg-navy-deep text-white"
+          ? "relative isolate flex min-h-[32rem] items-end overflow-hidden bg-navy-deep text-white sm:min-h-[36rem] lg:min-h-[42rem]"
           : "hero-stage relative border-b border-navy/[0.06]"
       }
     >
@@ -20,28 +28,34 @@ export function PageHero({ kicker, title, children, titleId, image, imageAlt = "
             alt={imageAlt}
             width="1920"
             height="1080"
-            className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
+            className={`absolute inset-0 h-full w-full object-cover ${imagePosition}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/68 to-navy-deep/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/72 via-transparent to-navy-deep/28" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/94 via-navy-deep/72 to-navy-deep/28" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/78 via-navy-deep/20 to-navy-deep/40" />
         </>
       ) : null}
-      <Container className={`relative max-w-4xl ${photo ? "py-24 sm:py-32" : "py-14 sm:py-20"}`}>
+      <Container
+        className={`relative ${photo ? "w-full pb-16 pt-28 sm:pb-20 lg:pb-24 lg:pt-32" : "max-w-4xl py-14 sm:py-20"}`}
+      >
         {kicker ? (
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+          <p className="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent">
             {kicker}
           </p>
         ) : null}
         <h1
           id={titleId}
-          className={`display max-w-3xl text-4xl sm:text-5xl ${photo ? "text-white" : "text-navy"}`}
+          className={`display max-w-3xl ${
+            photo
+              ? "text-[2.15rem] leading-[1.08] text-white sm:text-5xl lg:text-[3.2rem]"
+              : "text-4xl text-navy sm:text-5xl"
+          }`}
         >
           {title}
         </h1>
         {children ? (
           <div
             className={`mt-6 max-w-xl text-lg leading-relaxed ${
-              photo ? "text-white/84" : "text-ink-soft"
+              photo ? "text-white/86" : "text-ink-soft"
             }`}
           >
             {children}
@@ -58,7 +72,7 @@ export function CtaBand({
   text,
   actionLabel = "Dimmi cosa vuoi migliorare",
   secondaryTo,
-  secondaryLabel = "Scopri cosa possiamo fare",
+  secondaryLabel = "Scopri come possiamo aiutarti",
 }) {
   return (
     <section className="relative overflow-hidden bg-navy-deep text-white" aria-labelledby="cta-finale-title">

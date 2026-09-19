@@ -23,7 +23,8 @@ export function Contatti() {
         kicker="Contatti"
         title="Dimmi cosa vuoi migliorare"
         image={media("contatti-hero.jpg")}
-        imageAlt="Spazio di lavoro da cui parte il contatto con Italianissimi."
+        imageAlt="Professionista al telefono, per ascoltare e capire cosa migliorare."
+        imagePosition="object-[70%_18%] sm:object-[62%_22%] lg:object-[56%_26%]"
       >
         <p>Non serve sapere già quale soluzione ti serve. Indica cosa vuoi migliorare: WhatsApp o email.</p>
       </PageHero>
@@ -39,13 +40,6 @@ export function Contatti() {
       <Section className="bg-white">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <img
-              src={media("contatti-workspace.jpg")}
-              alt="Scrivania di lavoro reale, tra documenti e computer."
-              width="1200"
-              height="800"
-              className="mb-8 aspect-[16/10] w-full object-cover"
-            />
             <h2 className="display text-2xl text-navy">Recapiti</h2>
             <dl className="mt-6 space-y-5">
               <div>

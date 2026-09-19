@@ -8,7 +8,6 @@ export const heroSlides = [
     image: media("hero-slide-01-lavoro-reale.jpg"),
     imagePosition: "object-[28%_center] sm:object-[32%_center] lg:object-[38%_center]",
     alt: "Professionista al lavoro in un ambiente reale, con computer e documenti sul tavolo.",
-    kicker: "Italianissimi SRLS",
     headline: ["Il tuo lavoro è già abbastanza complesso.", "Il digitale non dovrebbe esserlo."],
     text: "Web, comunicazione, tecnologia, automazioni e AI pensati partendo dalle esigenze reali della tua attività.",
     cta: { label: "Dimmi cosa vuoi migliorare", action: "contact" },

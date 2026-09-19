@@ -16,18 +16,22 @@ export function Metodo() {
 
   return (
     <>
-      <PageHero
-        kicker="Metodo"
-        title="Come lavoriamo"
-        image={media("metodo-hero.jpg")}
-        imageAlt="Lavoro di analisi e confronto, partendo dall’attività reale."
-      >
+      <PageHero kicker="Metodo" title="Come lavoriamo">
         <p>Partiamo dalla tua attività, non dal nostro catalogo servizi.</p>
       </PageHero>
+      <figure className="bg-white">
+        <img
+          src={media("metodo-ascolto.jpg")}
+          alt="Confronto di lavoro intorno a un tavolo, per capire il problema reale."
+          width="1600"
+          height="900"
+          className="h-auto w-full"
+        />
+      </figure>
       <Section className="bg-paper">
-        <Container className="grid gap-4 md:grid-cols-2">
+        <Container className="grid gap-10 md:grid-cols-2 lg:gap-x-14 lg:gap-y-16">
           {methodSteps.map((step) => (
-            <MethodStep key={step.number} step={step} />
+            <MethodStep key={step.number} step={step} showImage={false} />
           ))}
         </Container>
       </Section>

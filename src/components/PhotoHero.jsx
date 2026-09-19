@@ -109,9 +109,11 @@ export function PhotoHero() {
 
       <Container className="relative flex min-h-[100svh] flex-col justify-end pb-28 pt-28 sm:pb-32 lg:justify-center lg:pb-28 lg:pt-28">
         <div key={slide.id} className="hero-copy max-w-2xl">
-          <p className="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent">
-            {slide.kicker}
-          </p>
+          {slide.kicker ? (
+            <p className="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent">
+              {slide.kicker}
+            </p>
+          ) : null}
           <h1
             id="hero-title"
             className={

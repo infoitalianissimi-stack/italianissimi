@@ -23,7 +23,7 @@ export function Layout() {
     pathname === "/" ||
     pathname === "/italianissimi" ||
     pathname === "/servizi" ||
-    pathname === "/metodo" ||
+    pathname === "/partner-digitale" ||
     pathname === "/contatti";
 
   return (
@@ -32,7 +32,7 @@ export function Layout() {
       <div className="min-h-screen">
         <SkipLink />
         <Navbar overlayHero={photoHero} />
-        <main id="contenuto" className={photoHero ? "" : "pt-[4.85rem]"}>
+        <main id="contenuto" className={photoHero ? "" : "pt-16 lg:pt-[4.5rem]"}>
           <Outlet />
         </main>
         <Footer />
