@@ -26,7 +26,7 @@ export function Contatti() {
         imageAlt="Professionista al telefono, per ascoltare e capire cosa migliorare."
         imagePosition="object-[70%_18%] sm:object-[62%_22%] lg:object-[56%_26%]"
       >
-        <p>Non serve sapere già quale soluzione ti serve. Indica cosa vuoi migliorare: WhatsApp o email.</p>
+        <p>Scegli cosa vuoi migliorare. Poi scrivici su WhatsApp o via email.</p>
       </PageHero>
       <Section className="bg-paper">
         <Container>

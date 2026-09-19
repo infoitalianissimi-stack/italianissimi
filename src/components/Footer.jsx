@@ -49,7 +49,7 @@ export function Footer() {
             </h2>
             <div className="mt-5 space-y-2 text-sm leading-relaxed text-white/80">
               <p>{company.legalName}</p>
-              <p>C.F./P.IVA {company.vatNumber}</p>
+              <p>P.IVA {company.vatNumber}</p>
               <p>REA {company.rea}</p>
               <p>
                 PEC{" "}
